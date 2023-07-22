@@ -13,6 +13,7 @@ This repository contains a web application that provides insights and visualizat
 - Front-end: React.js
 - Back-end: Node.js
 - Database: MongoDB
+- Mobile: Flutter
 
 ## Installation
 
