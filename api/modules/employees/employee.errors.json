@@ -1,0 +1,50 @@
+{
+  "1001": {
+    "msg": "Invalid Credentials"
+  },
+  "1002": {
+    "msg": "Month name must be string value."
+  },
+  "1003": {
+    "msg": "Failed to fetch employee performance by month."
+  },
+  "1004": {
+    "msg": "Week must be a string value. e.g Week1"
+  },
+  "1005": {
+    "msg": "Month name must be in Jan-Dec."
+  },
+  "1006": {
+    "msg": "Failed to fetch monthly summary."
+  },
+  "1007": {
+    "msg": "Week ID must be provided."
+  },
+  "1008": {
+    "msg": "Comment must be provided."
+  },
+  "1009": {
+    "msg": "Failed to add new comment in week data."
+  },
+  "1010": {
+    "msg": "Token must be provided."
+  },
+  "1011": {
+    "msg": "Failed to verify user from Google."
+  },
+  "1012": {
+    "msg": "Failed to create JWT token."
+  },
+  "1013": {
+    "msg": "Remove flag  must be a boolean value."
+  },
+  "1014": {
+    "msg": "Role should be one of ['Project Manager', 'User']."
+  },
+  "1015": {
+    "msg": "Failed to update user role."
+  },
+  "1016": {
+    "msg": "Failed to fetch projects."
+  }
+}

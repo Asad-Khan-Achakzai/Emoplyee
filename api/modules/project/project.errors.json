@@ -1,0 +1,59 @@
+{
+  "3001": {
+    "msg": "Email must be provided."
+  },
+  "3002": {
+    "msg": "Invalid email."
+  },
+  "3003": {
+    "msg": "ProjectID must be provided."
+  },
+  "3004": {
+    "msg": "User role must be provided."
+  },
+  "3005": {
+    "msg": "Role must be a string value."
+  },
+  "3006": {
+    "msg": "Failed to send email invitation."
+  },
+  "3007": {
+    "msg": "Name must be provided."
+  },
+  "3008": {
+    "msg": "Description must be provided"
+  },
+  "3009": {
+    "msg": "Description must be a string value."
+  },
+  "3010": {
+    "msg": "File URL must be provided."
+  },
+  "3011": {
+    "msg": "Name must be a string value."
+  },
+  "3012": {
+    "msg": "Invalid file Url."
+  },
+  "3013": {
+    "msg": "Failed to add new project."
+  },
+  "3014": {
+    "msg": "ProjectID must be an alphaNumeric value."
+  },
+  "3015": {
+    "msg": "Failed to delete project."
+  },
+  "3016": {
+    "msg": "Failed to fetch project details."
+  },
+  "3017": {
+    "msg": "Failed to fetch projects list."
+  },
+  "3018": {
+    "msg": "EmployeeID must be provided."
+  },
+  "3019": {
+    "msg": "EmployeeID must be alphaNumeric value."
+  }
+}

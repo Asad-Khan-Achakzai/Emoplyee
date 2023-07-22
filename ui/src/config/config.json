@@ -1,0 +1,9 @@
+{
+  "keys": {
+    "GOOGLE_CLIENT_ID": "1265472718-r754e13cbfvuvl4catoe9oteln3j253s.apps.googleusercontent.com"
+  },
+  "urls": {
+    "BASE_URL": "http://heimdall.xgrid.co:3000",
+    "FRONTEND_URL": "http://localhost:3001/"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "2001": {
+    "msg": "Excel file must be provided."
+  },
+  "2002": {
+    "msg": "File extension must be *.xlsx"
+  },
+  "2003": {
+    "msg": "Failed to save excel file on server."
+  },
+  "2004": {
+    "msg": "Failed to delete excel file from server."
+  },
+  "2005": {
+    "msg": "Failed to save monthly summary."
+  },
+  "2006": {
+    "msg": "Failed to save employee."
+  },
+  "2007": {
+    "msg": "Failed to save week data."
+  },
+  "2008": {
+    "msg": "Failed to create directory."
+  },
+  "2009": {
+    "msg": "Failed to fetch project ID."
+  }
+}

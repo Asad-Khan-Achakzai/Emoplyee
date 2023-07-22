@@ -1,0 +1,116 @@
+# Copyright (c) 2022, Xgrid Inc Ltd, http://xgrid.co
+#
+# This source is subject to the Xgrid License.
+# All rights reserved.
+#
+# THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF
+# ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+# PARTICULAR PURPOSE.
+#
+# Xgrid confidential information, delete if you are not the
+# intended recipient.
+
+CommitMsg:
+  GerritChangeId:
+    enabled: true
+    description: 'Ensure Gerrit Change-Id is present'
+    required: true
+  RussianNovel:
+    enabled: true
+    description: 'Check length of commit message'
+    quiet: true
+  SingleLineSubject:
+    enabled: true
+    description: 'Check subject line'
+  TextWidth:
+    enabled: true
+    description: 'Check text width'
+    max_subject_width: 60
+    max_body_width: 72
+  TrailingPeriod:
+    enabled: true
+    description: 'Check for trailing periods in subject'
+PreCommit:
+  TsLint:
+    enabled: true
+    description: 'Analyze with Tslint'
+    required_executable: 'npm'
+    command: ['npm', 'run', 'lint']
+    flags: ['-s']
+    install_command: 'npm install tslint tslint-eslint-rules codelyzer typescript @angular/compiler @angular/core rxjs'
+    include: '**/*.ts'
+    on_warn: pass
+  EsLint:
+    enabled: true
+    description: 'Analyze with Eslint'
+    required_executable: 'eslint'
+    install_command: 'npm install -g eslint eslint-config-airbnb-base eslint-plugin-import'
+    include: '**/*.js'
+    on_warn: pass
+  JsHint:
+    enabled: false
+    description: 'Analyze with JSHint'
+    required_executable: 'jshint'
+    flags: ['--verbose']
+    install_command: 'npm install -g jshint'
+    include: '**/*.js'
+  CssLint:
+    enabled: false
+    description: 'Analyze with csslint'
+    required_executable: 'csslint'
+    flags: ['--quiet', '--format=compact']
+    install_command: 'npm install -g csslint'
+    include: '**/*.css'
+  Pycodestyle:
+    enabled: true
+    description: 'Analyze with pycodestyle'
+    required_executable: 'pycodestyle'
+    install_command: 'pip install pycodestyle'
+    include: '**/*.py'
+    flags: ['--max-line-length=130, --ignore=E402']
+  HtmlTidy:
+    enabled: false
+    description: 'Analyze HTML with tidy'
+    required_executable: 'tidy'
+    flags: ['-errors', '-quiet', '-utf8']
+    include: '**/*.html'
+  JsonSyntax:
+    enabled: true
+    description: 'Validate JSON syntax'
+    required_library: 'json'
+    install_command: 'gem install json'
+    include: '**/*.json'
+  HardTabs:
+    enabled: true
+    description: 'Check for hard tabs'
+    quiet: true
+    required_executable: 'grep'
+    flags: ['-IHn', "\t"]
+    exclude:
+      - '**/Makefile'
+      - '**/*.go'
+      - 'docs/**/*'
+      - 'ui/web/client/assets/**/*'
+  MergeConflicts:
+    enabled: true
+    description: 'Check for merge conflicts'
+    quiet: true
+    required_executable: 'grep'
+    flags: ['-IHn', "^<<<<<<<[ \t]"]
+  TrailingWhitespace:
+    enabled: true
+    description: 'Check for trailing whitespace'
+    required_executable: 'grep'
+    flags: ['-IHn', "[ \t]$"]
+    exclude:
+      - 'docs/**/*'
+      - 'api/api_server/email_templates/**/*'
+  Pydocstyle:
+    enabled: true
+    description: 'Analyze docstrings with pydocstyle'
+    required_executable: 'pydocstyle'
+    install_command: 'pip install pydocstyle'
+    include: '**/*.py'
+    exclude:
+      - 'docs/**/*'

@@ -1,0 +1,127 @@
+# Copyright (c) 2019, ProCon
+#
+# This source is subject to the ProCon License.
+# All rights reserved.
+#
+# THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF
+# ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+# PARTICULAR PURPOSE.
+#
+# ProCon confidential information, delete if you are not the
+# intended recipient.
+CommitMsg:
+  GerritChangeId:
+    enabled: true
+    description: 'Ensure Gerrit Change-Id is present'
+    required: true
+  RussianNovel:
+    enabled: true
+    description: 'Check length of commit message'
+    quiet: true
+  SingleLineSubject:
+    enabled: true
+    description: 'Check subject line'
+  TextWidth:
+    enabled: true
+    description: 'Check text width'
+    max_subject_width: 60
+    max_body_width: 72
+  TrailingPeriod:
+    enabled: true
+    description: 'Check for trailing periods in subject'
+PreCommit:
+  TsLint:
+    enabled: true
+    description: 'Analyze with Tslint'
+    required_executable: 'npm'
+    command: ['npm', 'run', 'lint']
+    flags: ['-s']
+    install_command: 'npm install tslint tslint-eslint-rules codelyzer typescript @angular/compiler @angular/core rxjs'
+    include: '**/*.ts'
+    exclude:
+      - 'ui/e2e/*'
+    on_warn: pass
+  EsLint:
+    enabled: false
+    description: 'Analyze with Eslint'
+    required_executable: 'eslint'
+    install_command: 'npm install eslint eslint-config-airbnb-base eslint-plugin-import'
+    include: 'api/**/*.js'
+  JsHint:
+    enabled: false
+    description: 'Analyze with JSHint'
+    required_executable: 'jshint'
+    flags: ['--verbose']
+    install_command: 'npm install -g jshint'
+    include: '**/*.js'
+  CssLint:
+    enabled: false
+    description: 'Analyze with csslint'
+    required_executable: 'csslint'
+    flags: ['--quiet', '--format=compact']
+    install_command: 'npm install -g csslint'
+    include: '**/*.css'
+  Pycodestyle:
+    enabled: false
+    description: 'Analyze with pycodestyle'
+    required_executable: 'pycodestyle'
+    install_command: 'pip install pycodestyle'
+    include: '**/*.py'
+    flags: ['--max-line-length=130, --ignore=E402']
+  HtmlTidy:
+    enabled: false
+    description: 'Analyze HTML with tidy'
+    required_executable: 'tidy'
+    flags: ['-errors', '-quiet', '-utf8']
+    include: '**/*.html'
+  JsonSyntax:
+    enabled: true
+    description: 'Validate JSON syntax'
+    required_library: 'json'
+    install_command: 'gem install json'
+    include: '**/*.json'
+  HardTabs:
+    enabled: true
+    description: 'Check for hard tabs'
+    quiet: true
+    required_executable: 'grep'
+    flags: ['-IHn', "\t"]
+    exclude:
+      - 'docs/**/*'
+      - '**/README.md'
+      - 'mobile/ios/Runner.xcodeproj/project.pbxproj'
+      - '**/*.plist'
+      - '**/*.xib'
+      - '**/*.xcsettings'
+  MergeConflicts:
+    enabled: true
+    description: 'Check for merge conflicts'
+    quiet: true
+    required_executable: 'grep'
+    flags: ['-IHn', "^<<<<<<<[ \t]"]
+  TrailingWhitespace:
+    enabled: true
+    description: 'Check for trailing whitespace'
+    required_executable: 'grep'
+    flags: ['-IHn', "[ \t]$"]
+    exclude:
+      - 'docs/**/*'
+      - 'mobile/ios/Runner.xcodeproj/project.pbxproj'
+      - '**/README.md'
+      - '**/*.plist'
+      - '**/*.xib'
+      - '**/*.xcsettings'
+  Pydocstyle:
+    enabled: false
+    description: 'Analyze docstrings with pydocstyle'
+    required_executable: 'pydocstyle'
+    install_command: 'pip install pydocstyle'
+    include: '**/*.py'
+    exclude:
+      - 'docs/**/*'
+      - 'mobile/ios/Runner.xcodeproj/project.pbxproj'
+      - '**/README.md'
+      - '**/*.xib'
+      - '**/*.plist'
+      - '**/*.xcsettings'

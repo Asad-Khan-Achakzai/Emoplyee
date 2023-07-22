@@ -1,0 +1,22 @@
+{
+    "extends": "airbnb-base",
+    "plugins":[],
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "rules": {
+      "global-require": 0, // The rule is deprecated in eslint 7.0: Ref: https://eslint.org/docs/rules/global-require
+      "import/no-dynamic-require": 1,
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "no-underscore-dangle": 0,
+      "no-unused-vars": 1,
+      "no-param-reassign": 1,
+      "prefer-promise-reject-errors": 1,
+      "import/no-unresolved": 0,
+      "no-await-in-loop": 1,
+      "new-cap": 0,
+      "max-len": ["error", { "code": 250 }],
+      "no-restricted-globals": 0
+      }
+}

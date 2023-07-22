@@ -1,0 +1,38 @@
+.DS_Store
+.idea
+**/logs/*
+.vscode
+*.DS_Store
+**/*.DS_Store
+
+# compiled output
+**/documentation
+**/dist
+**/release
+**/tmp
+**/out-tsc
+**/*.map
+**/*.pyc
+
+# dependencies
+/**/node_modules
+/**/*.env
+/**/.package-lock.json
+
+# IDE - WebStorm
+ui/.editorconfig
+ui/package-lock.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+*/main.js
+
+# e2e
+/e2e/*.js
+/e2e/*.map
